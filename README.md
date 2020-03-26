@@ -9,8 +9,8 @@
 
 ### Association
 - has_many :chats
-- belongs_to :group
-
+- has_many :groups_users
+- has_many :groups, through: :groups_users
 
 ## chatsテーブル
 |Column|Type|Options|
