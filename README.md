@@ -5,18 +5,20 @@
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :chats
+- belongs_to :group
 
 
 ## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
-|text|text|null: false|
+|text|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -28,8 +30,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :chats
