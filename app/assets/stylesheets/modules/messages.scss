@@ -131,36 +131,36 @@
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
-    &__new_message {
+    &__text {
+      width: 100%;
+      padding-left: 10px;
+    }
+    &__mask {
       display: flex;
-      &__input-box {
-        display: flex;
-        height: 50px;
-        width: 100%;
-        margin: 20px 0 20px 40px;
-        position: relative;
-        &__text {
-          width: 100%;
-          padding-left: 10px;
-        }
-        &__image {
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer;
-          &__file {
-            display: none;
-          }
-        }
-      }
-      .submit-btn {
-        height: 50px;
-        width: 100px;
-        background-color: #38aef0;
-        margin: 20px 40px 20px 15px;
+      height: 50px;
+      width: 100%;
+      margin: 20px 0 20px 40px;
+      position: relative;
+      &__image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
         cursor: pointer;
+        &__icon {
+
+        }
+        &__hidden {
+          display: none;
+        }
       }
+    }
+    .submit {
+      height: 50px;
+      width: 100px;
+      background-color: #38aef0;
+      margin: 20px 40px 20px 15px;
+      cursor: pointer;
     }
   }
 }
