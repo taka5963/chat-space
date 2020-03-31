@@ -48,15 +48,16 @@
     height: calc(100% - 100px);
     width: 300px;
     &__list {
-      color: #ffffff;
       padding: 0 20px;
       &__group-name {
         font-size: 15px;
         padding: 20px 0 5px 0;
+        color: #ffffff;
       }
       &__message {
         font-size: 11px;
         padding-bottom: 40px;
+        color: #ffffff;
       }
     }
   }
