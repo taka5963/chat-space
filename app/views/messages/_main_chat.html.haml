@@ -10,21 +10,18 @@
         = link_to "#", class: "chat-main__group-info__edit-box__edit__btn" do
           Edit
   .chat-main__message-main
+    = render @messages
     .chat-main__message-main__message-box
-      .chat-main__message-main__message-box__message-info
+      .chat-main__message-main__message-box__message-info   
         .chat-main__message-main__message-box__message-info__message-name
-          masa
+          = message.user.name
         .chat-main__message-main__message-box__message-info__message-date
-          2019/11/20(wed) 17:43:01
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
       .chat-main__message-main__message-box__message-detail
-        おはよう！
-      .chat-main__message-main__message-box__message-info
-        .chat-main__message-main__message-box__message-info__message-name
-          sama
-        .chat-main__message-main__message-box__message-info__message-date
-          2019/11/20(wed) 17:50:01
-      .chat-main__message-main__message-box__message-detail
-        今起きたの！？
+        - if message.content.present?
+          %p.chat-main__message-main__message-box__message-detail__content
+            = message.content
+        = image_tag message.image.url, class: 'chat-main__message-main__message-box__message-detail__image' if message.image.present?
   .chat-main__message-form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'chat-main__message-form__text', placeholder: 'type a message'
