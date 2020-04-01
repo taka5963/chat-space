@@ -49,6 +49,9 @@
     width: 300px;
     &__list {
       padding: 0 20px;
+    a {
+      text-decoration: none;
+    }
       &__group-name {
         font-size: 15px;
         padding: 20px 0 5px 0;
@@ -83,6 +86,7 @@
       &__member-name {
         color: #999999;
         font-size: 12px;
+        display: flex;
       }
     }
     &__edit-box {
@@ -131,36 +135,40 @@
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
-    &__text {
+    .new_message {
       width: 100%;
-      padding-left: 10px;
-    }
-    &__mask {
       display: flex;
-      height: 50px;
-      width: 100%;
-      margin: 20px 0 20px 40px;
       position: relative;
-      &__image {
-        font-size: 1.3rem;
+      &__text {
+        width: 100%;
+        height: 50px;
+        margin: 20px 0 20px 40px;
+      }
+      &__mask {
+        height: 50px;
+        margin: 20px 0 20px 40px;
         position: absolute;
         top: 10px;
-        right: 10px;
-        cursor: pointer;
-        &__icon {
-
-        }
-        &__hidden {
-          display: none;
+        right: 170px;
+        &__image {
+          font-size: 1.3rem;
+          cursor: pointer;
+          &__icon {
+          }
+          &__hidden {
+            display: none;
+          }
         }
       }
+      &__submit {
+        height: 50px;
+        width: 100px;
+        background-color: #38aef0;
+        cursor: pointer;
+        color: white;
+        padding: 0 30px;
+        margin: 20px 40px 20px 15px;
+      }
     }
-    .submit {
-      height: 50px;
-      width: 100px;
-      background-color: #38aef0;
-      margin: 20px 40px 20px 15px;
-      cursor: pointer;
-    }
-  }
-}
+  } 
+} 

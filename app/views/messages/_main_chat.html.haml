@@ -2,31 +2,24 @@
   .chat-main__group-info
     .chat-main__group-info__group-detail
       .chat-main__group-info__group-detail__group-name
-        test
-      .chat-main__group-info__group-detail__member-name
-        masa
+        = @group.name
+      %ul.chat-main__group-info__group-detail__member-name
+        Member :
+        %li.chat-main__group-info__group-detail__member-name-list
+          - @group.users.each do |user|
+            = user.name
+        -# = current_user.name
     .chat-main__group-info__edit-box
       .chat-main__group-info__edit-box__edit
-        = link_to "#", class: "chat-main__group-info__edit-box__edit__btn" do
+        = link_to edit_group_path(current_user), class: "chat-main__group-info__edit-box__edit__btn" do
           Edit
   .chat-main__message-main
     = render @messages
-    .chat-main__message-main__message-box
-      .chat-main__message-main__message-box__message-info   
-        .chat-main__message-main__message-box__message-info__message-name
-          = message.user.name
-        .chat-main__message-main__message-box__message-info__message-date
-          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-      .chat-main__message-main__message-box__message-detail
-        - if message.content.present?
-          %p.chat-main__message-main__message-box__message-detail__content
-            = message.content
-        = image_tag message.image.url, class: 'chat-main__message-main__message-box__message-detail__image' if message.image.present?
   .chat-main__message-form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'chat-main__message-form__text', placeholder: 'type a message'
-      .chat-main__message-form__mask
-        = f.label :image, class: 'chat-main__message-form__mask__image' do
-          = icon('fas', 'image', class: 'chat-main__message-form__mask__image__icon')
-          = f.file_field :image, class: 'chat-main__message-form__mask__image__hidden'
-      = f.submit 'Send', class: 'chat-main__message-form__submit'
+      = f.text_field :content, class: 'new_message__text', placeholder: ' type a message'
+      .new_message__mask
+        = f.label :image, class: 'new_message__mask__image' do
+          = icon('fas', 'image', class: 'new_message__mask__image__icon')
+          = f.file_field :image, class: 'new_message__mask__image__hidden'
+      = f.submit 'Send', class: 'new_message__submit'
