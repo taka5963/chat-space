@@ -8,7 +8,6 @@
 }
 
 .side-bar {
-  height: 100%;
   width: 300px;
   float: left;
   &__user-name {
@@ -45,8 +44,9 @@
   }
    &__group-list {
     background-color: #2f3e51;
-    height: calc(100% - 100px);
+    height: calc(100vh - 100px);
     width: 300px;
+    overflow: scroll;
     &__list {
       padding: 0 20px;
     a {
@@ -107,8 +107,9 @@
     }
   }
   &__message-main {
-  background-color: #fafafa;
-  height: calc(100vh - 100px - 90px);
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    overflow: scroll;
     &__message-box {
       margin-left: 40px;
       &__message-info {
